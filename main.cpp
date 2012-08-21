@@ -6,6 +6,7 @@
 int main(int argc, char* argv[])
 {
 	atexit(bcm_host_deinit);
+	bcm_host_init();
 	EGLConfigBuilder* configBuilder = new EGLConfigBuilder();
 	configBuilder->setRGBA(5,6,5,0);
 	configBuilder->setDepth(16);

@@ -13,7 +13,7 @@ EGLWindow::EGLWindow(EGLConfigBuilder* configBuilder)
 {
 	int32_t success = 0;
 	success = graphics_get_display_size(0, &width, &height);
-	assert(success > 0);
+	assert(success >= 0);
 	maxWidth = width;
 	maxHeight = height;
 	if(configBuilder == NULL)
