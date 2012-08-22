@@ -13,8 +13,8 @@ int main(int argc, char* argv[])
 	MyGLWindow win(configBuilder);
 	uint32_t w=win.getMaxWidth();
 	uint32_t h=win.getMaxHeight();
-	win.setUpscale(false);
-	win.setScreen(w/4,h/4,w/2,h/2);
+	win.setUpscale(true);
+	win.setScreen(0,0,w,h);
 	while(true)
 	{
 		win.paintGL();

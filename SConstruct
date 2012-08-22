@@ -4,6 +4,7 @@ env = Environment(
 		LIBPATH=['/opt/vc/lib'],
 		LIBS=['GLESv2',
 			'EGL'])
+env.Decider('MD5-timestamp')
 env.Program('main',
 		[
 			'main.cpp',
