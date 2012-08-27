@@ -1,15 +1,17 @@
 #include "MyGLWindow.h"
 #include "GLES2/gl2.h"
+#include <iostream>
 
 MyGLWindow::MyGLWindow(EGLConfigBuilder* configBuilder)
 	: EGLWindow(configBuilder)
+	, box(new Box)
 {
 	srand(time(NULL));
 }
 
 MyGLWindow::~MyGLWindow()
 {
-
+	delete box;
 }
 
 void MyGLWindow::initializeGL()
@@ -23,6 +25,10 @@ void MyGLWindow::paintGL()
 	float g=(float)rand()/(float)RAND_MAX;
 	float b=(float)rand()/(float)RAND_MAX;
 	glClearColor(r,g,b,1);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	std::cout << " about to render box" << std::endl;
+	box->render();
+	std::cout << " about to swap" << std::endl;
 	swapBuffers();
+	std::cout << "end of loop" << std::endl;
 }

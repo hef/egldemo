@@ -56,13 +56,16 @@ void EGLWindow::makeSurface(uint32_t x, uint32_t y, uint32_t w, uint32_t h)
 	int minor;
 	result = eglInitialize(display, &major, &minor);
 	assert(result != EGL_FALSE);
+
 	configBuilder->chooseConfig(display);
 	EGLConfig config = configBuilder->getConfig();
-	result = eglBindAPI(EGL_OPENGL_ES_API);
+
+	result = eglBindAPI(EGL_OPENVG_API);
 	assert(result != EGL_FALSE);
 
-	context = eglCreateContext(display, config, EGL_NO_CONTEXT, contextAttributes);
-	assert(context!=EGL_NO_CONTEXT);
+	//context = eglCreateContext(display, config, EGL_NO_CONTEXT, contextAttributes);
+	context = eglCreateContext(display, config, EGL_NO_CONTEXT, NULL);
+	assert(context != EGL_NO_CONTEXT);
 	dstRect.x = x;
 	dstRect.y = y;
 	if(upscale == false)

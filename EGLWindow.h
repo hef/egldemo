@@ -32,7 +32,6 @@ protected:
 	DISPMANX_ELEMENT_HANDLE_T dispmanDisplay;
 	DISPMANX_ELEMENT_HANDLE_T dispmanUpdate;
 private:
-	void destrouSurface();
 	void makeSurface(uint32_t x, uint32_t y, uint32_t w, uint32_t h);
 	bool activeSurface;
 	bool upscale;
