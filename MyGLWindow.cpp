@@ -26,9 +26,6 @@ void MyGLWindow::paintGL()
 	float b=(float)rand()/(float)RAND_MAX;
 	glClearColor(r,g,b,1);
 	//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	std::cout << " about to render box" << std::endl;
 	box->render();
-	std::cout << " about to swap" << std::endl;
 	swapBuffers();
-	std::cout << "end of loop" << std::endl;
 }
